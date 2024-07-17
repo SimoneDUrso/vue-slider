@@ -37,6 +37,17 @@ createApp({
     },
 
     methods: {
+        next() {
+            if (this.activeImage == this.slides.length - 1) {
+                this.activeImage = 0;
+            }
+            else {
+                this.activeImage++;
+            }
+        },
 
+        prev() {
+
+        }
     }
 }).mount("#app")
