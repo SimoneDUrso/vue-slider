@@ -32,8 +32,13 @@ createApp({
             ],
 
             // Variabile per l'elemento attivo
-            activeImage: 0
+            activeImage: 0,
+            autoPlay: null
         }
+    },
+
+    created() {
+        this.autoScroll()
     },
 
     methods: {
@@ -60,13 +65,14 @@ createApp({
         },
 
         autoScroll() {
-            setInterval(() => {
+            this.autoPlay = setInterval(() => {
                 this.next();
             }, 3000);
-        }
-    },
+        },
 
-    created() {
-        this.autoScroll()
+        stopAutoscroll() {
+            clearInterval(this.autoPlay)
+        }
     }
+
 }).mount("#app")
