@@ -57,6 +57,16 @@ createApp({
 
         clickToActivate(i) {
             this.activeImage = i;
+        },
+
+        autoScroll() {
+            setInterval(() => {
+                this.next();
+            }, 3000);
         }
+    },
+
+    created() {
+        this.autoScroll()
     }
 }).mount("#app")
